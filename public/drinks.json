@@ -1,0 +1,118 @@
+{
+    "alcoholicWines": [
+      {
+        "id": 1,
+        "name": "Chardonnay",
+        "price": 250000,
+        "description": "A dry, white wine with fruity notes.",
+        "image": "public/images/alcoholicWines/chardonnay.webp"
+      },
+      {
+        "id": 2,
+        "name": "Merlot",
+        "price": 150000,
+        "description": "A smooth, medium-bodied red wine.",
+        "image": "public/images/alcoholicWines/merlot.webp"
+      },
+      {
+        "id": 3,
+        "name": "Merlot",
+        "price": 300000,
+        "description": "A smooth, medium-bodied red wine.",
+        "image": "public/images/alcoholicWines/whisky.webp"
+      }
+    ],
+    "beers": [
+      {
+        "id": 1,
+        "name": "Lager",
+        "price": 1500,
+        "description": "A light, crisp lager beer.",
+        "image": "public/images/beers/lager.webp"
+      },
+      {
+        "id": 2,
+        "name": "IPA",
+        "price": 750,
+        "description": "A bold, hoppy Indian Pale Ale.",
+        "image": "public/images/beers/IPA.webp"
+      },
+      {
+        "id": 3,
+        "name": "IPA",
+        "price": 900,
+        "description": "A bold, hoppy Indian Pale Ale.",
+        "image": "public/images/beers/spinorf-ice.webp"
+      }
+    ],
+    "energyDrinks": [
+      {
+        "id": 1,
+        "name": "Red Bull",
+        "price": 1000,
+        "description": "Popular energy drink with a boost.",
+        "image": "public/images/energyDrinks/redbull.avif"
+      },
+      {
+        "id": 2,
+        "name": "Monster",
+        "price": 1300,
+        "description": "Strong energy for a long-lasting effect.",
+        "image": "public/images/energyDrinks/monster.avif"
+      },
+      {
+        "id": 3,
+        "name": "Ripper",
+        "price": 1200,
+        "description": "Strong energy for a long-lasting effect.",
+        "image": "public/images/energyDrinks/ripper.avif"
+      }
+    ],
+    "softDrinks": [
+      {
+        "id": 1,
+        "name": "Coke",
+        "price": 400,
+        "description": "Classic Coca-Cola for refreshment.",
+        "image": "public/images/softDrinks/coke.avif"
+      },
+      {
+        "id": 2,
+        "name": "Schweppe",
+        "price": 500,
+        "description": "The taste of Pepsi to enjoy.",
+        "image": "public/images/softDrinks/schweppe.avif"
+      },
+      {
+        "id": 3,
+        "name": "Yoghurt",
+        "price": 4000,
+        "description": "Refreshing lemon-lime flavored soft drink.",
+        "image": "public/images/softDrinks/yoghurt.webp"
+      }
+    ],
+    "softWines": [
+      {
+        "id": 1,
+        "name": "Eva",
+        "price": 200000,
+        "description": "A refreshing non-alcoholic sparkling grape wine.",
+        "image": "public/images/softWines/eva.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Non-Alcoholic Rose",
+        "price": 23000,
+        "description": "A crisp and light non-alcoholic rose wine.",
+        "image": "public/images/softWines/non-alchoholic-rose.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Sparkling Grape",
+        "price": 22000,
+        "description": "A crisp and light non-alcoholic Sparklimg grape rose wine.",
+        "image": "public/images/softWines/sparklinggrape.jpg"
+      }
+    ]
+  }
+  
