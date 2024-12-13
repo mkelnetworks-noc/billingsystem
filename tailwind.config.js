@@ -1,13 +1,21 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    './src/**/*.{js,jsx,ts,tsx}', // Include all files where you use Tailwind
-  ],
+module.exports = {
+  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        navyBlue: '#001f4d',
+        skyBlue: '#00aaff',
+      },
+    },
   },
   plugins: [],
-}
+};
+
+
+
+
+
+
 
 // /** @type {import('tailwindcss').Config} */
 // module.exports = {

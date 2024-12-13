@@ -1,0 +1,36 @@
+mkel-billing-system/
+│
+├── public/                  # Public assets
+│   └── favicon.ico          # App favicon
+│
+├── src/                     # Source code
+│   ├── assets/              # Images, logos, and other assets
+│   │   └── logo.png
+│   │
+│   ├── components/          # Reusable components
+│   │   ├── Navbar.jsx
+│   │   ├── Button.jsx
+│   │   ├── Footer.jsx
+│   │   └── MenuBar.jsx
+│   │
+│   ├── context/             # Context for global state management
+│   │   └── UserContext.jsx
+│   │
+│   ├── hooks/               # Custom hooks for code reuse
+│   │   └── useAuth.js
+│   │
+│   ├── pages/               # Pages for each route
+│   │   ├── LandingPage.jsx
+│   │   └── Dashboard.jsx
+│   │
+│   ├── services/            # API calls and other services
+│   │   └── apiService.js
+│   │
+│   ├── App.jsx              # Main app entry
+│   ├── main.jsx             # Vite entry point
+│   └── styles/              # Tailwind CSS configurations or global styles
+│       └── global.css
+│
+├── tailwind.config.js       # Tailwind CSS configuration
+├── package.json             # Project dependencies
+└── vite.config.js           # Vite configuration
