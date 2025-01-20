@@ -1,22 +1,37 @@
-// 2.2. context/
-// The context/ folder will be used for managing the global state using React's Context API. This is useful if we need to share data (like user info or theme settings) across different components.
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-// Context. state for glonal state management
-
-import React, { createContext, useContext, useState } from 'react';
-
-// Create the context
+// Create the UserContext
 const UserContext = createContext();
 
+// Custom Hook to Access Context
 export const useUserContext = () => {
   return useContext(UserContext);
 };
 
+// Provider Component
 export const UserProvider = ({ children }) => {
+  // State to Store User Data
   const [user, setUser] = useState(null);
 
-  const login = (userData) => setUser(userData);
-  const logout = () => setUser(null);
+  // Load User from localStorage on Initialization
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  // Login Function
+  const login = (userData) => {
+    setUser(userData); // Update state
+    localStorage.setItem('user', JSON.stringify(userData)); // Store in localStorage
+  };
+
+  // Logout Function
+  const logout = () => {
+    setUser(null); // Clear state
+    localStorage.removeItem('user'); // Remove from localStorage
+  };
 
   return (
     <UserContext.Provider value={{ user, login, logout }}>

@@ -1,8 +1,13 @@
-import React from 'react';
+// LandingPage.js
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import LoginModal from './../components/Auth/Login';
+import RegisterModal from './../components/Auth/Register';
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
 
   return (
     <div className="bg-navyBlue h-screen flex flex-col justify-center items-center text-white">
@@ -13,11 +18,32 @@ const LandingPage = () => {
         Streamline your billing, reporting, and diagnostics with our cutting-edge platform.
       </p>
       <button
-        onClick={() => navigate('/dashboard')}
+        onClick={() => setShowLoginModal(true)}
         className="px-8 py-4 bg-skyBlue text-navyBlue font-semibold text-lg rounded-lg shadow-md hover:bg-sky-600 transition-all"
       >
         Get Started
       </button>
+
+      {showLoginModal && (
+        <LoginModal
+          onClose={() => setShowLoginModal(false)}
+          onSwitchToRegister={() => {
+            setShowLoginModal(false);
+            setShowRegisterModal(true);
+          }}
+          onLoginSuccess={() => navigate('/Dashboard')} // Pass redirection callback 
+        />
+      )}
+
+      {showRegisterModal && (
+        <RegisterModal
+          onClose={() => setShowRegisterModal(false)}
+          onSwitchToLogin={() => {
+            setShowRegisterModal(false);
+            setShowLoginModal(true);
+          }}
+        />
+      )}
     </div>
   );
 };

@@ -1,20 +1,14 @@
 // src/components/Navbar.jsx
 import React, { useEffect } from 'react';
 import { useUserContext } from '../../context/UserContext';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const { user, login, logout } = useUserContext();
-  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   login({ name: 'John Doe' }); // Placeholder user data
-  // }, []);
-
-  const handleLogout = () => {
-    logout(); // Clears user state
-    navigate('/'); 
-  }
+  useEffect(() => {
+    login({ name: 'John Doe' }); // Placeholder user data
+  }, []);
 
   return (
     <nav className="bg-navyBlue text-white px-6 py-4 flex justify-between items-center shadow-md">
@@ -104,7 +98,7 @@ const Navbar = () => {
       {/* User Section */}
       <div className="flex items-center">
         <span className="mr-4">Welcome, {user?.name}</span>
-        <button onClick={logout} className="text-red-500">
+        <button onClick={() => logout()} className="text-red-500">
           Logout
         </button>
         <img

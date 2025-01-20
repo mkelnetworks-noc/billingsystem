@@ -5,6 +5,7 @@ import Card from '../../utility/Card';
 import RatingPlansTable from './RatingPlansTable';
 import RatingPlansForm from './RatingPlansForm';
 import RatingPlanFormFileImport from './RatingPlanFormFileImport';
+import CustomerRatingPlanImportTable from './CustomerRatingPlanImportTable';
 import Modal from '../../utility/Modal';
 import Button from '../../utility/Button';
 
@@ -43,6 +44,8 @@ const CustomerRatingPlans = () => {
     },
   ]);
 
+  const [importedTableData, setImportedTableData] = useState([]);
+
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -57,22 +60,41 @@ const CustomerRatingPlans = () => {
   };
 
   const handleFileImport = (importData) => {
-    // Simulating adding imported data to the rating plans
-    setRatingPlans([
-      ...ratingPlans,
+    const tableData = [
       {
-        id: Date.now(),
-        name: importData.newPlan,
-        currency: importData.currency,
-        marginEnforcement: 'N/A',
-        template: importData.importTemplate,
-        uncommitChanges: '--',
-        lastDate: new Date().toISOString().split('T')[0], // Example date
-        assigned: 'no',
+        Zone: 'Z001',
+        Code: 'C001',
+        'Recurring Cahrge': '10.50',
+        'Effective Date': '2024-06-01',
       },
-    ]);
-    setFileImportModalOpen(false);
-  };
+      {
+        Zone: 'Z002',
+        Code: 'C002',
+        'Recurring Date': '15.75',
+        'Effective Date': '2024-06-05',
+      },
+    ];
+    setImportedTableData(tableData);
+    setFileImportModalOpen(false)
+  }
+
+  // const handleFileImport = (importData) => {
+  //   // Simulating adding imported data to the rating plans
+  //   setRatingPlans([
+  //     ...ratingPlans,
+  //     {
+  //       id: Date.now(),
+  //       name: importData.newPlan,
+  //       currency: importData.currency,
+  //       marginEnforcement: 'N/A',
+  //       template: importData.importTemplate,
+  //       uncommitChanges: '--',
+  //       lastDate: new Date().toISOString().split('T')[0], // Example date
+  //       assigned: 'no',
+  //     },
+  //   ]);
+  //   setFileImportModalOpen(false);
+  // };
 
   const resetForm = () => {
     setFormData({
@@ -167,6 +189,14 @@ const CustomerRatingPlans = () => {
           />
         </div>
       </Modal> 
+
+      {/* Customer Rating plan Import Table */}
+      {importedTableData.length > 0 && (
+        <Card>
+          <h3 className='text-xl font-semibold mb-4'>Imported Table Data</h3>
+          <CustomerRatingPlanImportTable data={importedTableData} />
+        </Card>
+      )}
     </div>
   );
 };
