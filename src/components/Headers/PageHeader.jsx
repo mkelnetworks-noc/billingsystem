@@ -20,7 +20,7 @@ const PageHeader = ({ title, breadcrumb, menuItems = [], actionItems = [] }) => 
             key={idx}
             href={item.link || '#'}
     
-            className="text-gray-600 hover:text-skyBlue transition"
+            className="text-skyBlue hover:text-navyBlue transition"
             // className="text-gray-600 hover:text-navyBlue font-medium transition"
           >
             {item.label}
