@@ -7,6 +7,8 @@ import CustomerRatingPlans from './pages/CustomerRatingPlans';
 import CustomerRatingsPlansImport from './pages/CustomerRatingPlansImport'
 import CallDetailRecords from './pages/reporting/CallDetailRecords';
 import Reports from './pages/reporting/reports';
+import BillingConfigurationPage from './pages/billing/BillingConfiguration';
+import BillingSettings from './components/Billing/billingConfiguration/billingSettings/billingSettings';
 
 // Dummy components for other pages
 // import Notifications from './pages/Notifications';
@@ -35,7 +37,12 @@ const App = () => {
         <Route path="/call-detail-records" element={<CallDetailRecords />} />
         <Route path="/reports" element={<Reports />} />
         
+        {/* Billing routes */}
+        <Route path="/billing-configuration" element={<BillingConfigurationPage />} />
+        {/* Billing / Configuration routes */}
+        <Route path="/billing-settings" element={<BillingSettings />} />
         {/* other routes */}
+
         
       </Routes>
     </Router>

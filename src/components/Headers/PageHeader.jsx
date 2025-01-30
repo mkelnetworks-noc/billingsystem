@@ -7,10 +7,10 @@ const PageHeader = ({ title, breadcrumb, menuItems = [], actionItems = [] }) => 
   const location = useLocation();// Get the current URl path
   
   return (
-    <div className="flex flex-col justify-between mb-6">
+    <div className="w-full flex flex-col justify-between mb-6">
       <div>
-        <h1 className="text-2xl font-semibold text-navyBlue">{title}</h1>
-        {breadcrumb && <p className="text-sm text-gray-500">{breadcrumb}</p>}
+        <h1 className="text-2xl text-navyBlue mb-2">{title}</h1>
+        {breadcrumb && <p className="text-sm text-gray-600 hover:text-skyBlue">{breadcrumb}</p>}
       </div>
       <div className='flex flex-row justify-between'>
       <div className="flex space-x-4">
@@ -20,7 +20,7 @@ const PageHeader = ({ title, breadcrumb, menuItems = [], actionItems = [] }) => 
             key={idx}
             href={item.link || '#'}
     
-            className="text-gray-600 hover:text-navyBlue font-medium transition"
+            className="text-gray-600 hover:text-skyBlue transition"
             // className="text-gray-600 hover:text-navyBlue font-medium transition"
           >
             {item.label}
