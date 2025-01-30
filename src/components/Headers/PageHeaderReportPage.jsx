@@ -8,7 +8,7 @@ const PageHeaderReportPage = ({ title, breadcrumb, menuItems = [], actionItems =
   const location = useLocation();// Get the current URl path
   
   return (
-    <div className="flex flex-col justify-between mb-6">
+    <div className="flex flex-col justify-between mb-6 w-full">
       <div>
         <h1 className="text-2xl font-semibold text-navyBlue">{title}</h1>
         {breadcrumb && <p className="text-sm text-gray-500">{breadcrumb}</p>}

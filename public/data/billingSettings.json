@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "name": "42COM",
+      "type": "C",
+      "currency": "$",
+      "billingStart": "2024-01-01",
+      "openingBalance": 5000,
+      "billingCycle": "Monthly",
+      "scheduled": "Yes",
+      "creationAction": "Auto",
+      "nextCycleDate": "2024-02-01",
+      "lastCycleDate": "2024-01-01"
+    },
+    {
+      "id": 2,
+      "name": "Airtel",
+      "type": "S",
+      "currency": "£",
+      "billingStart": "2024-02-15",
+      "openingBalance": 1000,
+      "billingCycle": "Bi Weekly",
+      "scheduled": "No",
+      "creationAction": "Manual",
+      "nextCycleDate": "2024-05-15",
+      "lastCycleDate": "2024-02-15"
+    },
+    {
+      "id": 3,
+      "name": "MTN",
+      "type": "C",
+      "currency": "$",
+      "billingStart": "2023-12-01",
+      "openingBalance": 2500,
+      "billingCycle": "Daily BT",
+      "scheduled": "Yes",
+      "creationAction": "Auto",
+      "nextCycleDate": "2024-12-01",
+      "lastCycleDate": "2023-12-01"
+    }
+  ]
+  

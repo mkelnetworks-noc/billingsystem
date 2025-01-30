@@ -1,23 +1,18 @@
-// src/components/Navbar.jsx
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useUserContext } from '../../context/UserContext';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const { user, login, logout } = useUserContext();
+  const { user, logout } = useUserContext();
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   login({ name: 'John Doe' }); // Placeholder user data
-  // }, []);
 
   const handleLogout = () => {
     logout(); // Clears user state
-    navigate('/'); 
-  }
+    navigate('/');
+  };
 
   return (
-    <nav className="bg-navyBlue text-white px-6 py-4 flex justify-between items-center shadow-md">
+    <nav className="bg-navyBlue text-white px-6 py-4 flex justify-between items-center shadow-md relative z-50">
       <div className="flex space-x-4">
         {/* Main Menu Items */}
         {[
@@ -26,7 +21,7 @@ const Navbar = () => {
           'Codes',
           'Rating',
           'Routing',
-          'Billing',
+          'Billing', // <-- Dropdown for Billing
           'Reporting', // <-- Dropdown for Reporting
           'Diagnostics',
           'Alerts',
@@ -41,7 +36,7 @@ const Navbar = () => {
                 Rating
               </span>
               <div className="absolute hidden group-hover:block bg-white text-navyBlue rounded-md shadow-lg w-60">
-                {[
+                {[ 
                   { name: 'Customer Rating', path: '/customer-rating-plans' },
                   { name: 'Customer Notification', path: '/customer-notification' },
                   { name: 'Customer Floor Price Rules', path: '/customer-floor-price-rules' },
@@ -63,6 +58,34 @@ const Navbar = () => {
                 ))}
               </div>
             </div>
+          ) : menu === 'Billing' ? (
+            // Dropdown for Billing
+            <div key={idx} className="relative group">
+              <span className="cursor-pointer hover:text-skyBlue transition-all">
+                Billing
+              </span>
+              <div className="absolute hidden group-hover:block bg-white text-navyBlue rounded-md shadow-lg w-60">
+                {[ 
+                  { name: 'Customer Invoicing', path: '/customer-invoicing' },
+                  { name: 'Supplier Invoicing', path: '/supplier-invoicing' },
+                  { name: 'Billing Reports', path: '/billing-reports' },
+                  { name: 'Payments and Transactions', path: '/payments-transactions' },
+                  { name: 'Statement of Account', path: '/statement-of-account' },
+                  { name: 'Dispute Management', path: '/dispute-management' },
+                  { name: 'Invoice Netting', path: '/invoice-netting' },
+                  { name: 'Billing Auditing', path: '/billing-auditing' },
+                  { name: 'Billing Configuration', path: '/billing-configuration' },
+                ].map((submenu, idx) => (
+                  <Link
+                    key={idx}
+                    to={submenu.path}
+                    className="block px-4 py-2 hover:bg-skyBlue hover:text-white"
+                  >
+                    {submenu.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
           ) : menu === 'Reporting' ? (
             // Dropdown for Reporting
             <div key={idx} className="relative group">
@@ -70,7 +93,7 @@ const Navbar = () => {
                 Reporting
               </span>
               <div className="absolute hidden group-hover:block bg-white text-navyBlue rounded-md shadow-lg w-60">
-                {[
+                {[ 
                   { name: 'Call Detail Records', path: '/call-detail-records' },
                   { name: 'Monitoring', path: '/monitoring' },
                   { name: 'Dashboards', path: '/dashboards' },
@@ -104,12 +127,11 @@ const Navbar = () => {
       {/* User Section */}
       <div className="flex items-center">
         <span className="mr-4">Welcome, {user?.name}</span>
-        <button onClick={logout} className="text-red-500">
+        <button onClick={handleLogout} className="text-red-500">
           Logout
         </button>
         <img
           src="images/profile1.avif"
-          
           alt="User"
           className="w-8 h-8 rounded-full ml-4"
         />
