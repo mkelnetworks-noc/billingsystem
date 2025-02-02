@@ -7,7 +7,7 @@ const PageHeader = ({ title, breadcrumb, menuItems = [], actionItems = [] }) => 
   const location = useLocation();// Get the current URl path
   
   return (
-    <div className="w-full flex flex-col justify-between mb-6">
+    <div className="flex flex-col justify-between mb-6 w-full">
       <div>
         <h1 className="text-2xl text-navyBlue mb-2">{title}</h1>
         {breadcrumb && <p className="text-sm text-gray-600 hover:text-skyBlue">{breadcrumb}</p>}
@@ -21,14 +21,11 @@ const PageHeader = ({ title, breadcrumb, menuItems = [], actionItems = [] }) => 
             href={item.link || '#'}
     
             className="text-skyBlue hover:text-navyBlue transition"
-            // className="text-gray-600 hover:text-navyBlue font-medium transition"
           >
             {item.label}
           </a>
         ))}
       </div>
-
-      {/* Action menu(Dropdown) on the right */}
       {actionItems.length > 0 && <ActionMenu actionMenuItems={actionItems} />}
       </div>
     </div>
