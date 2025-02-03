@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "billingCycle": "Bi-Weekly",
+      "cycle": "2 Weekly (Monday with no end of month crossover)",
+      "firstInvoice": "Invoice on next billing cycle",
+      "scheduling": "3 Hours from period end"
+    },
+    {
+      "id": 2,
+      "billingCycle": "Daily - BT",
+      "cycle": "Daily",
+      "firstInvoice": "Invoice on next billing cycle",
+      "scheduling": "3 Hours from period end"
+    },
+    {
+      "id": 3,
+      "billingCycle": "Monthly",
+      "cycle": "Monthly 1",
+      "firstInvoice": "Invoice on next billing cycle",
+      "scheduling": "3 Hours from period end"
+    },
+    {
+      "id": 4,
+      "billingCycle": "Monthly - BT",
+      "cycle": "Monthly 1",
+      "firstInvoice": "Invoice on next billing cycle",
+      "scheduling": "3 Hours from period end"
+    },
+    {
+      "id": 5,
+      "billingCycle": "Weekly Billing",
+      "cycle": "1 Weekly (Monday with no end of month crossover)",
+      "firstInvoice": "Invoice on next billing cycle",
+      "scheduling": ""
+    }
+  ]
+  

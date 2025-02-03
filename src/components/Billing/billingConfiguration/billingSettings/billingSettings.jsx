@@ -14,7 +14,8 @@ const BillingSettings = () => {
       .catch(error => console.error('Error fetching billing data:', error));
   }, []);
 
-    <><Navbar />
+    <>
+    <Navbar />
     <ActionMenu
         actionItems={[
             { label: 'Setup Customer', link: '' },

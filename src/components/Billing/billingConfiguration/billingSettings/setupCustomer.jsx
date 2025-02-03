@@ -1,13 +1,11 @@
 import React from "react";
-import Modal from "../../../utility/ModalNew"; // Import your existing modal component
-import { FiInfo } from "react-icons/fi"; // Import an appropriate React Icon
+import Modal from "../../../utility/ModalNew";
+import { FiInfo } from "react-icons/fi";
 
 const SetupCustomer = ({ isOpen, onClose }) => {
-    console.log("SetupCustomer isOpen:", isOpen); // Debugging
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Setup Customer">
-      <div className="flex flex-col md:flex-row gap-6 p-4">
-        {/* Left Section */}
+      <div className="flex flex-col md:flex-row gap-6 p-4 ">
         <div className="flex-1 bg-gray-50 p-4 rounded-md shadow-md">
           <label className="block font-semibold">Select Carrier</label>
           <input
@@ -37,7 +35,6 @@ const SetupCustomer = ({ isOpen, onClose }) => {
           </select>
         </div>
 
-        {/* Right Section */}
         <div className="flex-1 bg-blue-50 p-4 rounded-md shadow-md border-l-4 border-blue-500">
           <FiInfo className="text-blue-500 text-3xl mb-2" />
 
@@ -61,6 +58,18 @@ const SetupCustomer = ({ isOpen, onClose }) => {
             currency, it is possible to copy all configuration settings.
           </p>
         </div>
+      </div>
+
+      <div className="flex justify-end gap-4 p-4">
+        <button
+          className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"
+          onClick={onClose}
+        >
+          Cancel
+        </button>
+        <button className="bg-navyBlue text-white px-4 py-2 rounded-md hover:bg-blue-800 transition">
+          Save
+        </button>
       </div>
     </Modal>
   );

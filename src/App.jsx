@@ -10,7 +10,7 @@ import Reports from './pages/reporting/reports';
 import BillingConfigurationPage from './pages/billing/BillingConfiguration';
 import BillingSettings from './components/Billing/billingConfiguration/billingSettings/billingSettings';
 import SetupCustomer from './components/Billing/billingConfiguration/billingSettings/setupCustomer';
-
+import BillingCycles from './components/Billing/billingConfiguration/billingCycles';
 // Dummy components for other pages
 // import Notifications from './pages/Notifications';
 // import FloorPriceRules from './pages/FloorPriceRules';
@@ -42,6 +42,7 @@ const App = () => {
         <Route path="/billing-configuration" element={<BillingConfigurationPage />} />
         {/* Billing / Configuration routes */}
         <Route path="/billing-settings" element={<BillingSettings />} />
+        <Route path="/billing-cycles" element={<BillingCycles />} />
         <Route path="/setup-customer" element={<SetupCustomer />} />
         {/* other routes */}
 
