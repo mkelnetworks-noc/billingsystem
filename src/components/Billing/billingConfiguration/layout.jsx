@@ -4,11 +4,13 @@ import BillingSettings from './billingSettings/billingSettings';
 import BillingCycles from './billingCycles';
 import SetupCustomer from './billingSettings/setupCustomer';
 import SetupSupplier from './billingSettings/setupSupplier';
+import AddBillingCycle from './billingCycles/addBillingCycles';
 
 const BillingConfigurationLayout = () => {
     const [selectedTab, setSelectedTab] = useState('billing-settings');
     const [isSetupCustomerOpen, setSetupCustomerOpen] = useState(false);
     const [isSetupSupplierOpen, setSetupSupplierOpen] = useState(false);
+    const [isAddBillingCycleOpen, setAddBillingCycle] = useState(false);
 
     const menuItems = [
         { label: 'Billing Settings', key: 'billing-settings' },
@@ -39,7 +41,7 @@ const BillingConfigurationLayout = () => {
             return [
                 {
                     label: 'Add Billing Cycle',
-                    onClick: () => alert('Add Billing Cycle Clicked'),
+                    onClick: () => setAddBillingCycle(true),
                     className: 'bg-blue-500 text-white'
                 }
             ];
@@ -89,6 +91,7 @@ const BillingConfigurationLayout = () => {
             {/* Setup Modals */}
             <SetupCustomer isOpen={isSetupCustomerOpen} onClose={() => setSetupCustomerOpen(false)} />
             <SetupSupplier isOpen={isSetupSupplierOpen} onClose={() => setSetupSupplierOpen(false)} />
+            <AddBillingCycle isOpen={isAddBillingCycleOpen} onClose={() => setAddBillingCycle(false)} />
         </div>
     );
 };
